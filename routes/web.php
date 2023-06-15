@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LandingPageControllrer;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,3 +29,4 @@ Route::middleware('tenant')->group(function() {
 
 Route::get('/dashboard', [HomeController::class , 'index'])->name('dashboard.index');
 
+Route::get('/', [LandingPageControllrer::class , 'index'])->name('landingPage.index');
