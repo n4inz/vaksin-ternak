@@ -49,13 +49,11 @@
          <!-- <div>Jadwal Vaksin</div> -->
         <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
-            <div class="items-center gap-8 flex">
-                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+                            <thead class="text-xs text-white bg-slate-800 uppercase dark:text-gray-400">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                                    <th scope="col" class="px-6 py-3">
                                         Jadwal
                                     </th>
                                     <th scope="col" class="px-6 py-3">
@@ -64,7 +62,7 @@
                                     <th scope="col" class="px-6 py-3">
                                         Nama vaksin
                                     </th>
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                                    <th scope="col" class="px-6 py-3">
                                         Jumlah pendaftar
                                     </th>
                                     <th scope="col" class="px-6 py-3">
@@ -94,11 +92,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div>
-                    Nain
-                </div>
-            </div>
         </div>
       </section>
 </template>

@@ -89,4 +89,10 @@ class JadwalVaksinController extends Controller
         ]);
 
     }
+
+    public function deleteJadwal(JadwalVaksin $id)
+    {
+        $id->delete();
+        return Redirect::route('jadwal.index')->with('message' , 'Success delete');
+    }
 }
