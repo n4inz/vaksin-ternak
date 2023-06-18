@@ -2,7 +2,7 @@
     <div class="flex min-h-full flex-col justify-center h-screen bg-gray-50 px-6 py-12 lg:px-8">
         <div class="bg-white w-[50%] p-5 mx-auto rounded">
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img class="mx-auto h-24 w-auto" src="/images/logo_srp.jpeg" alt="Your Company">
+                <img class="mx-auto h-24 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Official_Logo_of_Sidenreng_Rappang_Regency.png" alt="Your Company">
                 
             </div>
 
