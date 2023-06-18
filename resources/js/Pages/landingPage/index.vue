@@ -4,7 +4,7 @@
         <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="#" class="flex items-center">
-                    <img src="/images/logo_srp.jpeg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Official_Logo_of_Sidenreng_Rappang_Regency.png" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Vaksin Ternak</span>
                 </a>
                 <div class="flex items-center lg:order-2">
