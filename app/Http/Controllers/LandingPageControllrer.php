@@ -12,7 +12,10 @@ class LandingPageControllrer extends Controller
 {
     public function index()
     {
-        $jadwal = JadwalVaksin::with('nama_vaksin')->orderBy('id', 'desc')->get();
+        $jadwal = JadwalVaksin::with(['nama_vaksin'])
+                    ->orderBy('id', 'desc')
+                    ->withCount('pendaftaran_vaksin')
+                    ->get();
         
         return Inertia::render('landingPage/index' , [
             'jadwal' => $jadwal,

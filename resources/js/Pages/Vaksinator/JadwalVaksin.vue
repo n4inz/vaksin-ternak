@@ -36,9 +36,9 @@
                             <th scope="col" class="px-6 py-3">
                                 status
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <!-- <th scope="col" class="px-6 py-3">
                                 Action
-                            </th>
+                            </th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -53,28 +53,28 @@
                                 Laptop
                             </td>
                             <td class="px-6 py-4">
-                                $2999
+                               {{ item.pendaftaran_vaksin_count }}
                             </td>
                             <td class="px-6 py-4">
-                                Silver
+                                {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}
                             </td>
                             <td class="px-6 py-4">
-                                Laptop
+                                {{ item.jumlah_vaksin }}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="sm:col-span-3">
                                     <div class="mt-2">
                                         <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                            <option>New Jadwal</option>
-                                            <option>Progress</option>
-                                            <option>Done</option>
+                                            <option :selected="item.status === 0"  >New Jadwal</option>
+                                            <option :selected="item.status === 1" >Progress</option>
+                                            <option :selected="item.status === 2" >Done</option>
                                         </select>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-6 py-4">
+                            <!-- <td class="px-6 py-4">
                                 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>

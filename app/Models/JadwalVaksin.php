@@ -17,4 +17,9 @@ class JadwalVaksin extends Model
         return $this->belongsTo(DataVaksin::class, 'data_vaksins_id');
     }
 
+    public function pendaftaran_vaksin()
+    {
+        return $this->hasMany(PendaftaranVaksin::class ,'jadwal_vaksin_id');
+    }
+
 }

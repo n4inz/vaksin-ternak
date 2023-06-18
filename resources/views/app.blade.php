@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     @inertiaHead
   </head>
-  <body>
+  <body class="bg-gray-50">
     @inertia
 
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>

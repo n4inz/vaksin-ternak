@@ -12,7 +12,11 @@ class JadwalVaksinController extends Controller
 {
     public function index()
     {
-        $jadwal = JadwalVaksin::query()->orderBy('id', 'desc')->get();
+        $jadwal = JadwalVaksin::query()
+        ->withCount('pendaftaran_vaksin')
+        ->withSum('pendaftaran_vaksin', 'jumlah_hewan')
+        ->orderBy('id', 'desc')->get();
+
         return Inertia::render('Vaksinator/JadwalVaksin',[
             'jadwal' => $jadwal
         ]);
@@ -46,6 +50,43 @@ class JadwalVaksinController extends Controller
 
     public function jadwalSaya(Request $request)
     {
-        return Inertia::render('Vaksinator/JadwalSaya');
+        $jadwal = JadwalVaksin::query()
+        ->withCount('pendaftaran_vaksin')
+        ->with('nama_vaksin')
+        ->orderBy('id', 'desc')->get();
+
+        return Inertia::render('Vaksinator/JadwalSaya',[
+            'jadwal' => $jadwal
+        ]);
+    }
+
+    public function addJumlahVaksin(Request $request)
+    {
+       
+        $request->validate([
+            'jumlahVaksin' => 'required',
+            'status' => 'required'
+        ]);
+
+        $user = 3;
+        $query = JadwalVaksin::where('id', $request->id);
+        
+        $jadwalVaksin = $query->first(['id','data_vaksins_id']);
+        $dataVaksin = DataVaksin::where('id',$jadwalVaksin->data_vaksins_id);
+
+        if( ($dataVaksin->first()->jumlah - $dataVaksin->first()->terpakai ) <= $request->jumlahVaksin AND $dataVaksin->first()->jumlah <= $request->jumlahVaksin){
+            return Redirect::route('jadwal.jadwalSaya')->with('message' , 'stok_'.$request->id);
+        }
+
+        $query->update([
+            'jumlah_vaksin' => $request->jumlahVaksin,
+            'user_id' => 3,
+            'status' => $request->status
+        ]);
+
+        $dataVaksin->update([
+            'terpakai' => $request->jumlahVaksin + $dataVaksin->first()->terpakai,
+        ]);
+
     }
 }
