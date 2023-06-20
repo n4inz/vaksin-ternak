@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class JadwalVaksin extends Model
 {
     use HasFactory, SoftDeletes;
@@ -20,6 +21,11 @@ class JadwalVaksin extends Model
     public function pendaftaran_vaksin()
     {
         return $this->hasMany(PendaftaranVaksin::class ,'jadwal_vaksin_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }

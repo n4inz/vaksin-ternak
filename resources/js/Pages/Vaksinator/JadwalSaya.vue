@@ -39,7 +39,7 @@
                             </td>
 
                             <td class="px-6 py-4">
-                                {{ item.pendaftaran_vaksin_count }}
+                                {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}
                             </td>
 
                             <td class="px-6 py-4">

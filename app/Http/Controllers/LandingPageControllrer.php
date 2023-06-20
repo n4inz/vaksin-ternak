@@ -14,6 +14,7 @@ class LandingPageControllrer extends Controller
     {
         $jadwal = JadwalVaksin::with(['nama_vaksin'])
                     ->orderBy('id', 'desc')
+                    ->whereHas('nama_vaksin')
                     ->withCount('pendaftaran_vaksin')
                     ->get();
         

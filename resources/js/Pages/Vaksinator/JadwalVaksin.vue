@@ -57,7 +57,7 @@
                                 {{ item.lokasi }}
                             </td>
                             <td class="px-6 py-4">
-                                Laptop
+                                {{ item.user ? item.user.name : '' }}
                             </td>
                             <td class="px-6 py-4">
                                {{ item.pendaftaran_vaksin_count }}
