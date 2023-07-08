@@ -117,6 +117,8 @@
                                     >Keterangan</label
                                 >
                                 <div class="mt-2">
+                                        <!-- <ckeditor  :editor="editor" v-model="form.keterangan"></ckeditor> -->
+
                                     <textarea 
                                      name="keterangan" 
                                      id="" 
@@ -159,11 +161,13 @@
 import Sidebar from "../Layouts/Sidebar.vue";
 import { Link } from "@inertiajs/vue3";
 import { router, useForm } from "@inertiajs/vue3";
-
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKEditor from "@ckeditor/ckeditor5-vue"
 export default {
     components: {
         Sidebar,
         Link,
+        ckeditor: CKEditor.component
     },
 
     props: {
@@ -188,6 +192,8 @@ export default {
         return {
             form,
             buatJadwal,
+            editor: ClassicEditor,
+
         };
     },
 

@@ -33,6 +33,7 @@ class JadwalVaksinController extends Controller
 
     public function storeJadwal(Request $request)
     {
+        // return $request;
         $request->validate([
             'jadwal' => 'required',
             'waktu' => 'required',
@@ -43,7 +44,7 @@ class JadwalVaksinController extends Controller
             'jadwal' => $request->jadwal. ' '.$request->waktu,
             'lokasi' => $request->lokasi,
             'data_vaksins_id' => $request->nama_vaksin,
-            
+            'keterangan' => $request->keterangan
         ]);
 
         return Redirect::route('jadwal.index')->with('success', 'Create jadwal suksess');

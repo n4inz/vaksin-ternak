@@ -4,8 +4,22 @@
         <form @submit.prevent="daftarVaksin">
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Pendaftaran vaksinasi</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Pengisian data diri untuk mengetahui detail hewan yang di vaksin</p>
+                <h2 class="text-base font-semibold leading-7 text-gray-900 text-center">Pendaftaran vaksinasi</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600 text-center">Pengisian data diri untuk mengetahui detail hewan yang di vaksin</p>
+                
+
+                
+                <div class="flex flex-col mt-16 text-slate-500">
+                    <h2 class="text-base font-semibold leading-7 text-gray-900">Kriteria hewan sapi layak vaksin</h2>
+                    <!-- <span>1. Sapi bisa di vaksin mulai umur 2 minggu s/d sapi dewasa</span>
+                    <span>2. Sapi sehat</span>
+                    <span> 3. Sapi sakit tidak di perbolehkan divaksin</span>
+                    <span>4. sapi sakit bisa divaksin 6(enam) bulan setelah kesembuhannya</span> -->
+                     <p class="formatted-text" v-html="jadwal.keterangan"></p>
+                </div>
+               
+
+             
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-3">
                         <label for="nik" class="block text-sm font-medium leading-6 text-gray-900">Nik</label>
@@ -128,3 +142,10 @@ export default {
 
 
 </script>
+
+<style scoped>
+.formatted-text {
+  white-space: pre-line;
+}
+
+</style>
