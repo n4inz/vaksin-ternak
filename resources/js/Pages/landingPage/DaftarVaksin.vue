@@ -37,13 +37,37 @@
                         <div v-if="form.errors.nama_pemilik" v-text="form.errors.nama_pemilik" class="text-xs text-red-500 mt-2"></div>
                     </div>
 
+
+
                     <div class="sm:col-span-4">
                         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Lokasi Vaksin</label>
                         <div class="mt-2">
                             <input disabled id="email" name="email" :value="jadwal.lokasi" type="text" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
+                    </div>
+
+
+                    <div class="sm:col-span-1">
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 invisible">Umur</label>
+                        <div class="mt-2">
+                            <input id="email" v-model="form.umur_jumlah"  type="number" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                    </div>
+
+
+                    <div class="sm:col-span-1">
+                        <label for="" class="block text-sm font-medium leading-6 text-gray-900 invisible">Umur</label>
+                        <div class="mt-2">
+                        <select v-model="form.umur_bulan" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" name="" id="">
+                            <option value="Bulan">Bulan</option>
+                            <option value="Minggu">Minggu</option>
+                        </select>
+
+                        </div>
                         
                     </div>
+
+
 
                     <div class="sm:col-span-3">
                         <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Nama Vaksin</label>
@@ -121,7 +145,9 @@ export default {
             nik: "",
             jumlah_hewan: "",
             nama_pemilik: "",
-            jadwal_vaksin_id: props.jadwal.id
+            jadwal_vaksin_id: props.jadwal.id,
+            umur_jumlah:"",
+            umur_bulan:""
 
         });
 

@@ -34,18 +34,20 @@ class LandingPageControllrer extends Controller
 
     public function storeVaksinasi(Request $request)
     {
-        
         $request->validate([
             'nik' => 'required|integer',
             'jumlah_hewan' => 'required|integer',
             'nama_pemilik' => 'required',
+            'umur_jumlah' => 'required'
         ]);
 
         PendaftaranVaksin::create([
             'nik' => $request->nik,
             'nama_pemilik' => $request->nama_pemilik,
             'jumlah_hewan' => $request->jumlah_hewan,
-            'jadwal_vaksin_id' => $request->jadwal_vaksin_id
+            'jadwal_vaksin_id' => $request->jadwal_vaksin_id,
+            'umur_jumlah' => $request->umur_jumlah,
+            'umur_bulan' => $request->umur_bulan
         ]);
 
         return Redirect::route('landingPage.daftarVaksinasi' , ['id' => $request->jadwal_vaksin_id])->with('message', 'Pendaftaran berhasil');

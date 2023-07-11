@@ -14,10 +14,11 @@ class JadwalVaksinController extends Controller
     {
         $jadwal = JadwalVaksin::query()
         ->withCount('pendaftaran_vaksin')
+        // ->with('pendaftaran_vaksin')
         ->withSum('pendaftaran_vaksin', 'jumlah_hewan')
         ->with('user')
         ->orderBy('id', 'desc')->get();
-        
+        // return $jadwal;
         return Inertia::render('Vaksinator/JadwalVaksin',[
             'jadwal' => $jadwal
         ]);

@@ -15,7 +15,7 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-2 py-3">
                                 Jadwal
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -30,10 +30,13 @@
                             <th scope="col" class="px-6 py-3">
                                 Jumlah sapi
                             </th>
+                            <!-- <th scope="col" class="px-6 py-3">
+                                Umur
+                            </th> -->
                             <th scope="col" class="px-6 py-3">
                                 Jumlah vaksin
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 w-40 py-3">
                                 status
                             </th>
                             <!-- <th scope="col" class="px-6 py-3">
@@ -65,6 +68,9 @@
                             <td class="px-6 py-4">
                                 {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}
                             </td>
+                            <!-- <td class="px-6 py-4">
+                                {{ item.umur_jumlah }} {{ item.umur_bulan }}
+                            </td> -->
                             <td class="px-6 py-4">
                                 {{ item.jumlah_vaksin }}
                             </td>
