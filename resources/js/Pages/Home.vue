@@ -94,7 +94,7 @@
                             <td colspan="2" class="border-2 border-slate-700">1.150</td>
                             <td colspan="2" class="border-2 border-slate-700">3.300</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
-                            <td colspan="2" class="border-2 border-slate-700"></td>
+                            <td colspan="2" class="border-2 border-slate-700 font-semibold">Sudah vaksin</td>
                         </tr>
 
                         <tr>
@@ -106,7 +106,7 @@
                             <td colspan="2"  class="border-2 border-slate-700">600</td>
                             <td colspan="2" class="border-2 border-slate-700">2.150</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
-                            <td colspan="2" class="border-2 border-slate-700"></td>
+                            <td colspan="2" class="border-2 border-slate-700 font-semibold">Sudah vaksin</td>
                         </tr>
 
                         <tr >
@@ -118,7 +118,7 @@
 
                             <td colspan="2" class="border-2 border-slate-700">4.000</td>
                             <td colspan="2" class="border-2 border-slate-700">11.877</td>
-                            <td colspan="2" class="border-2 border-slate-700"></td>
+                            <td colspan="2" class="border-2 border-slate-700 font-semibold">Sudah vaksin</td>
                         </tr>
 
                         <tr >
@@ -130,7 +130,7 @@
                             <td colspan="2" class="border-2 border-slate-700">300</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
-                            <td colspan="2" class="border-2 border-slate-700"></td>
+                            <td colspan="2" class="border-2 border-slate-700 font-semibold">Sementara vaksin</td>
                         </tr>
                     </tbody>
                 </table>
