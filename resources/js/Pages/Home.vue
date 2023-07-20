@@ -26,7 +26,7 @@
                             <td colspan="2" class="border-2 border-slate-700">Se (Dosis)</td>
                             <td colspan="2" class="border-2 border-slate-700">PMK</td>
                         </tr>
-                        <tr >
+                        <!-- <tr >
                             <td  class="border-2 border-slate-700">APBD II</td>
                             <td class="border-2 border-slate-700">APBD I</td>
                             <td  class="border-2 border-slate-700">APBD II</td>
@@ -36,18 +36,17 @@
                             <td colspan="2" class="border-2 border-slate-700">APBD II</td>
                             <td colspan="2" class="border-2 border-slate-700">APBD I</td>
                     
-                        </tr>
+                        </tr> -->
                     </thead>
                     <tbody>
                         <tr >
                             <td  class="border-2 border-slate-700">1</td>
                             <td class="border-2 border-slate-700">2016</td>
-                            <td  class="border-2 border-slate-700">11.000</td>
-                            <td class="border-2 border-slate-700">5.000</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">3.000</td>
-                            <td  class="border-2 border-slate-700">3.000</td>
-                            <td class="border-2 border-slate-700">1.850</td>
+                            <td colspan="2"  class="border-2 border-slate-700">16.000</td>
+                            <td colspan="2" class="border-2 border-slate-700">3.000</td>
+               
+                            <td colspan="2" class="border-2 border-slate-700">4.850</td>
+
                             <td colspan="2" class="border-2 border-slate-700">6.500</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
@@ -56,13 +55,10 @@
                         <tr >
                             <td  class="border-2 border-slate-700">2</td>
                             <td class="border-2 border-slate-700">2017</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">2.000</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">1.000</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">1.500</td>
-                            <td colspan="2" class="border-2 border-slate-700">-</td>
+                            <td colspan="2" class="border-2 border-slate-700">2.000</td>
+                            <td colspan="2" class="border-2 border-slate-700">1.000</td>
+                            <td colspan="2" class="border-2 border-slate-700">1.500</td>
+                            <td colspan="2" class="border-2 border-slate-700">0</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
                         </tr>
@@ -70,12 +66,9 @@
                         <tr >
                             <td  class="border-2 border-slate-700">3</td>
                             <td class="border-2 border-slate-700">2018</td>
-                            <td  class="border-2 border-slate-700">3.500</td>
-                            <td class="border-2 border-slate-700">1.500</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">300</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">750</td>
+                            <td colspan="2" class="border-2 border-slate-700">5.000</td>
+                            <td colspan="2" class="border-2 border-slate-700">300</td>
+                            <td colspan="2" class="border-2 border-slate-700">750</td>
                             <td colspan="2" class="border-2 border-slate-700">0</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
@@ -84,12 +77,9 @@
                         <tr >
                             <td  class="border-2 border-slate-700">4</td>
                             <td class="border-2 border-slate-700">2019</td>
-                            <td  class="border-2 border-slate-700">4.000</td>
-                            <td class="border-2 border-slate-700">6.500</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">500</td>
-                            <td  class="border-2 border-slate-700">300</td>
-                            <td class="border-2 border-slate-700">400</td>
+                            <td colspan="2"  class="border-2 border-slate-700">10.500</td>
+                            <td colspan="2" class="border-2 border-slate-700">500</td>
+                            <td colspan="2" class="border-2 border-slate-700">700</td>
                             <td colspan="2" class="border-2 border-slate-700">4.000</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
@@ -98,12 +88,10 @@
                         <tr >
                             <td  class="border-2 border-slate-700">5</td>
                             <td class="border-2 border-slate-700">2020</td>
-                            <td  class="border-2 border-slate-700">4.000</td>
-                            <td class="border-2 border-slate-700">3.400</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">500</td>
-                            <td  class="border-2 border-slate-700">750</td>
-                            <td class="border-2 border-slate-700">400</td>
+                            <td colspan="2" class="border-2 border-slate-700">7.400</td>
+                            
+                            <td colspan="2" class="border-2 border-slate-700">500</td>
+                            <td colspan="2" class="border-2 border-slate-700">1.150</td>
                             <td colspan="2" class="border-2 border-slate-700">3.300</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
@@ -112,12 +100,10 @@
                         <tr>
                             <td  class="border-2 border-slate-700">6</td>
                             <td class="border-2 border-slate-700">2021</td>
-                            <td  class="border-2 border-slate-700">2.100</td>
-                            <td class="border-2 border-slate-700">3.400</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">500</td>
-                            <td  class="border-2 border-slate-700">300</td>
-                            <td class="border-2 border-slate-700">300</td>
+                            <td colspan="2" class="border-2 border-slate-700">5.500</td>
+
+                            <td colspan="2" class="border-2 border-slate-700">500</td>
+                            <td colspan="2"  class="border-2 border-slate-700">600</td>
                             <td colspan="2" class="border-2 border-slate-700">2.150</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
@@ -126,12 +112,10 @@
                         <tr >
                             <td  class="border-2 border-slate-700">7</td>
                             <td class="border-2 border-slate-700">2022</td>
-                            <td  class="border-2 border-slate-700">4.000</td>
-                            <td class="border-2 border-slate-700">700</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">500</td>
-                            <td  class="border-2 border-slate-700">300</td>
-                            <td class="border-2 border-slate-700">300</td>
+                            <td colspan="2"  class="border-2 border-slate-700">4.700</td>
+                            <td colspan="2" class="border-2 border-slate-700">500</td>
+                            <td  colspan="2" class="border-2 border-slate-700">600</td>
+
                             <td colspan="2" class="border-2 border-slate-700">4.000</td>
                             <td colspan="2" class="border-2 border-slate-700">11.877</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
@@ -140,12 +124,10 @@
                         <tr >
                             <td  class="border-2 border-slate-700">8</td>
                             <td class="border-2 border-slate-700">2023</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">800</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">300</td>
-                            <td  class="border-2 border-slate-700">-</td>
-                            <td class="border-2 border-slate-700">300</td>
+                            <td colspan="2" class="border-2 border-slate-700">800</td>
+                            <td colspan="2" class="border-2 border-slate-700">300</td>
+
+                            <td colspan="2" class="border-2 border-slate-700">300</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
