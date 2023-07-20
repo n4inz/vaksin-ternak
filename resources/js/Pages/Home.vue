@@ -35,16 +35,17 @@
                             <td class="border-2 border-slate-700">APBD I</td>
                             <td colspan="2" class="border-2 border-slate-700">APBD II</td>
                             <td colspan="2" class="border-2 border-slate-700">APBD I</td>
-                    
+
                         </tr> -->
                     </thead>
                     <tbody>
+                    <!--
                         <tr >
                             <td  class="border-2 border-slate-700">1</td>
                             <td class="border-2 border-slate-700">2016</td>
                             <td colspan="2"  class="border-2 border-slate-700">16.000</td>
                             <td colspan="2" class="border-2 border-slate-700">3.000</td>
-               
+
                             <td colspan="2" class="border-2 border-slate-700">4.850</td>
 
                             <td colspan="2" class="border-2 border-slate-700">6.500</td>
@@ -84,12 +85,12 @@
                             <td colspan="2" class="border-2 border-slate-700">-</td>
                             <td colspan="2" class="border-2 border-slate-700"></td>
                         </tr>
-
+                        -->
                         <tr >
                             <td  class="border-2 border-slate-700">5</td>
                             <td class="border-2 border-slate-700">2020</td>
                             <td colspan="2" class="border-2 border-slate-700">7.400</td>
-                            
+
                             <td colspan="2" class="border-2 border-slate-700">500</td>
                             <td colspan="2" class="border-2 border-slate-700">1.150</td>
                             <td colspan="2" class="border-2 border-slate-700">3.300</td>
@@ -149,10 +150,10 @@
                             <th rowspan="3" scope="col" class="px-6 py-3 border">
                                 Categoryaa
                             </th>
-                            
+
                         </tr>
                         <tr>
-                            
+
                             <th colspan="2" scope="col" class="px-6 py-3">
                                 ANTHRAX (Dosis)
                             </th>
@@ -178,7 +179,7 @@
                             </th>
 
                         </tr>
-                        
+
                     </thead>
                     <tbody>
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -267,7 +268,7 @@ export default {
             chartOptions1: {
                 responsive: true
             },
-           
+
         }
     },
 
