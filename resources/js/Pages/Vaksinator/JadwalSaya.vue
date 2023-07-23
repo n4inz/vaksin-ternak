@@ -95,7 +95,7 @@ export default {
         
         const change = (i) => {
           const status = event.target.value;
-          router.post('/add-jumlah-vaksin', {id: i.id,status  , jumlahVaksin : 1},)
+          router.post('/add-jumlah-vaksin', {id: i.id,status  , jumlahVaksin : 0},)
 
         //   router.post('/add-jumlah-vaksin', {id: i.id,status  , jumlahVaksin : i.jumlah_vaksin},)
         }
