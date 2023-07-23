@@ -87,7 +87,7 @@
                         </tr>
                         -->
                         <tr >
-                            <td  class="border-2 border-slate-700">5</td>
+                            <td  class="border-2 border-slate-700">1</td>
                             <td class="border-2 border-slate-700">2020</td>
                             <td colspan="2" class="border-2 border-slate-700">7.400</td>
 
@@ -99,7 +99,7 @@
                         </tr>
 
                         <tr>
-                            <td  class="border-2 border-slate-700">6</td>
+                            <td  class="border-2 border-slate-700">2</td>
                             <td class="border-2 border-slate-700">2021</td>
                             <td colspan="2" class="border-2 border-slate-700">5.500</td>
 
@@ -111,7 +111,7 @@
                         </tr>
 
                         <tr >
-                            <td  class="border-2 border-slate-700">7</td>
+                            <td  class="border-2 border-slate-700">3</td>
                             <td class="border-2 border-slate-700">2022</td>
                             <td colspan="2"  class="border-2 border-slate-700">4.700</td>
                             <td colspan="2" class="border-2 border-slate-700">500</td>
@@ -123,7 +123,7 @@
                         </tr>
 
                         <tr >
-                            <td  class="border-2 border-slate-700">8</td>
+                            <td  class="border-2 border-slate-700">4</td>
                             <td class="border-2 border-slate-700">2023</td>
                             <td colspan="2" class="border-2 border-slate-700">800</td>
                             <td colspan="2" class="border-2 border-slate-700">300</td>
@@ -247,6 +247,8 @@ export default {
                         label: 'Populasi',
                         backgroundColor: '#06b6d4',
                         data: [12350,8750,21677,1400]
+                        // data: [1,6,8,5]
+
                     }
                 ]
             },
