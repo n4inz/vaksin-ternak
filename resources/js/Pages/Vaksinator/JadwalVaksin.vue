@@ -33,9 +33,9 @@
                             <!-- <th scope="col" class="px-6 py-3">
                                 Umur
                             </th> -->
-                            <th scope="col" class="px-6 py-3">
+                            <!-- <th scope="col" class="px-6 py-3">
                                 Jumlah vaksin
-                            </th>
+                            </th> -->
                             <th scope="col" class="px-6 w-40 py-3">
                                 status
                             </th>
@@ -71,9 +71,9 @@
                             <!-- <td class="px-6 py-4">
                                 {{ item.umur_jumlah }} {{ item.umur_bulan }}
                             </td> -->
-                            <td class="px-6 py-4">
+                            <!-- <td class="px-6 py-4">
                                 {{ item.jumlah_vaksin }}
-                            </td>
+                            </td> -->
                             <td class="px-6 py-4">
                                 <div class="sm:col-span-3">
                                     <div class="mt-2">

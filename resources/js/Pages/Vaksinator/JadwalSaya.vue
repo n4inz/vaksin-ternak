@@ -20,9 +20,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Nama vaksin
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <!-- <th scope="col" class="px-6 py-3">
                                 Jumlah vaksin
-                            </th>
+                            </th> -->
                             <th scope="col" class="px-6 py-3">
                                 status
                             </th>
@@ -45,12 +45,12 @@
                             <td class="px-6 py-4">
                                 {{ item.nama_vaksin.nama_vaksin }}
                             </td>
-                            <td class="px-6 py-4">
+                            <!-- <td class="px-6 py-4">
                               <div class="w-[10%]">
                                 <input v-model="item.jumlah_vaksin" type="number"  class="text-sm border-none outline-none focus:ring-0">
                               </div>
                               <div v-if="$page.props.flash.message == 'stok_'+item.id" class="text-xs text-red-500 mt-2">Stok vaksin tidak cukup</div>
-                            </td>
+                            </td> -->
                             <td class="px-6 py-4">
                                 <div class="sm:col-span-3">
                                     <div class="mt-2">
@@ -95,7 +95,9 @@ export default {
         
         const change = (i) => {
           const status = event.target.value;
-          router.post('/add-jumlah-vaksin', {id: i.id,status  , jumlahVaksin : i.jumlah_vaksin},)
+          router.post('/add-jumlah-vaksin', {id: i.id,status  , jumlahVaksin : 1},)
+
+        //   router.post('/add-jumlah-vaksin', {id: i.id,status  , jumlahVaksin : i.jumlah_vaksin},)
         }
 
         return {
