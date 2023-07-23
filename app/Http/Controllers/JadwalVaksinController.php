@@ -79,9 +79,9 @@ class JadwalVaksinController extends Controller
         $jadwalVaksin = $query->first(['id','data_vaksins_id']);
         $dataVaksin = DataVaksin::where('id',$jadwalVaksin->data_vaksins_id);
 
-        if( ($dataVaksin->first()->jumlah - $dataVaksin->first()->terpakai ) <= $request->jumlahVaksin AND $dataVaksin->first()->jumlah <= $request->jumlahVaksin){
-            return Redirect::route('jadwal.jadwalSaya')->with('message' , 'stok_'.$request->id);
-        }
+        // if( ($dataVaksin->first()->jumlah - $dataVaksin->first()->terpakai ) <= $request->jumlahVaksin AND $dataVaksin->first()->jumlah <= $request->jumlahVaksin){
+        //     return Redirect::route('jadwal.jadwalSaya')->with('message' , 'stok_'.$request->id);
+        // }
 
         $query->update([
             'jumlah_vaksin' => $request->jumlahVaksin,
