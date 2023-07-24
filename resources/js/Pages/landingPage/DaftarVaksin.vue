@@ -15,7 +15,13 @@
                     <span>2. Sapi sehat</span>
                     <span> 3. Sapi sakit tidak di perbolehkan divaksin</span>
                     <span>4. sapi sakit bisa divaksin 6(enam) bulan setelah kesembuhannya</span> -->
-                     <p class="formatted-text" v-html="jadwal.keterangan"></p>
+                     <!-- <p class="formatted-text" v-html="jadwal.keterangan"></p> -->
+                     <p class="formatted-text">
+                        1. Sapi bisa di vaksin mulai umur 2 minggu s/d sapi dewasa <br>
+                        2. Sapi sehat <br>
+                        3. Sapi sakit tidak di perbolehkan divaksin <br>
+                        4. sapi sakit bisa divaksin 6(enam) bulan setelah kesembuhannya
+                     </p>
                 </div>
                
 
