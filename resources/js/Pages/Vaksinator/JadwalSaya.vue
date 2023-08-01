@@ -10,16 +10,18 @@
                                 Jadwal
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Lokasi
+                                Kecamatan
                             </th>
 
-
+                            <th scope="col" class="px-6 py-3">
+                                Desa
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Jumlah sapi
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <!-- <th scope="col" class="px-6 py-3">
                                 Nama vaksin
-                            </th>
+                            </th> -->
                             <!-- <th scope="col" class="px-6 py-3">
                                 Jumlah vaksin
                             </th> -->
@@ -35,24 +37,17 @@
                                 {{ item.jadwal }} {{ item.waktu }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ item.lokasi }}
+                               <span v-if="item.kecamatan !== null">{{ item.kecamatan.kecamatan }}</span>
                             </td>
-
+                            <td class="px-6 py-4">
+                               <span v-if="item.desa !== null">{{ item.kecamatan.desa }}</span>
+                            </td>
                             <td class="px-6 py-4">
                                 {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}
                             </td>
 
-                            <td class="px-6 py-4">
-                                {{ item.nama_vaksin.nama_vaksin }}
-                            </td>
-                            <!-- <td class="px-6 py-4">
-                              <div class="w-[10%]">
-                                <input v-model="item.jumlah_vaksin" type="number"  class="text-sm border-none outline-none focus:ring-0">
-                              </div>
-                              <div v-if="$page.props.flash.message == 'stok_'+item.id" class="text-xs text-red-500 mt-2">Stok vaksin tidak cukup</div>
-                            </td> -->
-                            <td class="px-6 py-4">
-                                <div class="sm:col-span-3">
+                            <td class="px-6 py-4 flex items-center space-x-2">
+                                <div class="sm:col-span-3 w-full">
                                     <div class="mt-2">
                                         <select @change="change(item)" id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                             <option :selected="item.status === 0" value="0" >New Jadwal</option>
@@ -60,6 +55,14 @@
                                             <option :selected="item.status === 2" value="2">Done</option>
                                         </select>
                                     </div>
+                                </div>
+
+                                <div>
+                                    <Link :href="route('jadwal.detailPendaftar' , item.id)" class="bg-purple-700 rounded">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                        </svg>
+                                    </Link>
                                 </div>
                             </td>
                           

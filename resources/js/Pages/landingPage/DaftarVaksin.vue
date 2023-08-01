@@ -45,23 +45,93 @@
 
 
 
-                    <div class="sm:col-span-4">
-                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Lokasi Vaksin</label>
-                        <div class="mt-2">
-                            <input disabled id="email" name="email" :value="jadwal.lokasi" type="text" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
+                    <div class="sm:col-span-2">
+                        <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Jadwal Vaksin</label>
+                        <select
+                            id="desa"
+                            autocomplete="desa"
+                            v-model="form.jadwal_form"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                            <option
+                                v-for="item in jadwal"
+                                :key="item"
+                                :value="item.id"
+                            >
+                                {{ item.jadwal }}
+                            </option>
+                        </select>
+                        <div v-if="form.errors.jadwal_form" v-text="form.errors.jadwal_form" class="text-xs text-red-500 mt-2"></div>
+                    </div>
+
+                    <div class="sm:col-span-1">
+                        <label for="kecamatan" class="block text-sm font-medium leading-6 text-gray-900">Kecamatan</label>
+                        <select
+                            id="kecamatan"
+                            autocomplete="kecamatan"
+                            v-model="form.kecamatan"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                            <option
+                                v-for="item in kecamatan"
+                                :key="item"
+                                :value="item.id"
+                            >
+                                {{ item.kecamatan }}
+                            </option>
+                        </select>
+                        <div v-if="form.errors.kecamatan" v-text="form.errors.kecamatan" class="text-xs text-red-500 mt-2"></div>
                     </div>
 
 
                     <div class="sm:col-span-1">
-                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 invisible">Umur</label>
+                        <label for="kecamatan" class="block text-sm font-medium leading-6 text-gray-900">Desa</label>
+                        <select
+                            id="kecamatan"
+                            autocomplete="kecamatan"
+                            v-model="form.desa"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                            <option
+                                v-for="item in desa"
+                                :key="item"
+                                :value="item.id"
+                            >
+                                {{ item.desa }}
+                            </option>
+                        </select>
+                        <div v-if="form.errors.desa" v-text="form.errors.desa" class="text-xs text-red-500 mt-2"></div>
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label for="kecamatan" class="block text-sm font-medium leading-6 text-gray-900">Alamat</label>
+                        <select
+                            id="kecamatan"
+                            autocomplete="kecamatan"
+                            v-model="form.alamat"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                            <option
+                                v-for="item in alamat"
+                                :key="item"
+                                :value="item.id"
+                            >
+                                {{ item.alamat }}
+                            </option>
+                        </select>
+                        <div v-if="form.errors.alamat" v-text="form.errors.alamat" class="text-xs text-red-500 mt-2"></div>
+                    </div>
+
+
+                    <div class="sm:col-span-1">
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 ">Umur</label>
                         <div class="mt-2">
                             <input id="email" v-model="form.umur_jumlah"  type="number" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                     </div>
 
 
-                    <div class="sm:col-span-1">
+                    <div class="sm:col-span-2">
                         <label for="" class="block text-sm font-medium leading-6 text-gray-900 invisible">Umur</label>
                         <div class="mt-2">
                         <select v-model="form.umur_bulan" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" name="" id="">
@@ -73,37 +143,33 @@
                         
                     </div>
 
-
-
                     <div class="sm:col-span-3">
-                        <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Nama Vaksin</label>
+                        <label for="nama_vaksin" class="block text-sm font-medium leading-6 text-gray-900">Nama Vaksin</label>
                         <div class="mt-2">
-                            <input disabled type="text" :value="jadwal.nama_vaksin.nama_vaksin" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <select
+                                id="nama_vaksin"
+                                autocomplete="nama_vaksin"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                            >
+                                <option
+                                    v-for="item in namaVaksin"
+                                    :key="item"
+                                    :value="item.id"
+                                >
+                                    {{ item.nama_vaksin }}
+                                </option>
+                            </select>
                         </div>
                     </div>
 
 
-                    <div class="sm:col-span-2 sm:col-start-1">
+
+                    <div class="sm:col-span-4 sm:col-start-1">
                         <label for="jumlah_hewan" class="block text-sm font-medium leading-6 text-gray-900">Jumlah hewan</label>
                         <div class="mt-2">
                             <input type="number" v-model="form.jumlah_hewan" id="jumlah_hewan" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                         <div v-if="form.errors.jumlah_hewan" v-text="form.errors.jumlah_hewan" class="text-xs text-red-500 mt-2"></div>
-                    </div>
-
-                    <div class="sm:col-span-2">
-                    <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Tanggal Vaksin</label>
-                    <div class="mt-2">
-                        <input type="text" disabled :value="jadwal.jadwal" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    </div>
-
-                    <div class="sm:col-span-2">
-                    <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">Waktu Vaksin</label>
-                    <div class="mt-2">
-                        <!-- <input  type="text" :value="jadwal.id"> -->
-                        <input disabled :value="jadwal.jadwal" type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
                     </div>
                 </div>
                 </div>
@@ -141,6 +207,18 @@ export default {
         jadwal:{
             type:Array
         },
+        kecamatan:{
+            type:Array
+        },
+        desa:{
+            type:Array
+        },
+        alamat:{
+            type:Array
+        },
+        namaVaksin : {
+            type:Array
+        },
         success:{
             type:Object
         }
@@ -153,7 +231,11 @@ export default {
             nama_pemilik: "",
             jadwal_vaksin_id: props.jadwal.id,
             umur_jumlah:"",
-            umur_bulan:""
+            umur_bulan:"",
+            jadwal_form: "",
+            kecamatan:"",
+            desa:"",
+            alamat:"",
 
         });
 

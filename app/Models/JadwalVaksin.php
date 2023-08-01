@@ -28,4 +28,19 @@ class JadwalVaksin extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class, 'kecamatans_id');
+    }
+
+    public function desa()
+    {
+        return $this->belongsTo(Desa::class, 'desas_id');
+    }
+
+    public function alamat()
+    {
+        return $this->belongsTo(Alamat::class, 'alamats_id');
+    }
+
 }

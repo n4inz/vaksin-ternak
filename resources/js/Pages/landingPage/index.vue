@@ -39,61 +39,16 @@
     <section class="bg-white dark:bg-gray-900">
         <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
             <div class=" text-slate-600 sm:gap-12 sm:grid-cols-3">
-                <h1 class="text-center text-4xl font-semibold">Jadwal vaksin</h1>
+                <h1 class="text-center text-4xl font-semibold">Daftar Vaksin sekarang</h1>
+            </div>
+            <div class="flex items-center justify-center">
+                <Link :href="route('landingPage.daftarVaksinasi')" class="text-white bg-purple-700 hover:bg-purple-800 mt-10 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Daftar Vaksin</Link>
+
             </div>
         </div>
     </section>
     <!-- End block -->
-    <!-- Start block -->
-    <section class="bg-gray-50 dark:bg-gray-800">
-         <!-- <div>Jadwal Vaksin</div> -->
-        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
-            <!-- Row -->
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-white bg-slate-800 uppercase dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Jadwal
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Lokasi
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Nama vaksin
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Jumlah pendaftar
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in jadwal" :key="item" class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                                        {{ item.jadwal }}
-                                    </th>
-                                    <td class="px-6 py-4">
-                                       {{ item.lokasi }}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                         {{ item.nama_vaksin.nama_vaksin }}
-                                    </td>
-                                    <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                                        {{ item.pendaftaran_vaksin_count }}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <Link :href="route('landingPage.daftarVaksinasi' , {'id' : item.id})" class="text-gray-50 p-2 rounded bg-blue-500/80">Daftar</Link>
-                                    </td>
-                                </tr>
 
-                            </tbody>
-                        </table>
-                    </div>
-        </div>
-      </section>
 </template>
 
 <script>

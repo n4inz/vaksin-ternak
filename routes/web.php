@@ -41,7 +41,7 @@ Route::post('/logout', [AuthController::class , 'logout'])->name('logout');
 
 Route::get('/', [LandingPageControllrer::class , 'index'])->name('landingPage.index');
 Route::post('/store-vaksinasi', [LandingPageControllrer::class , 'storeVaksinasi'])->name('landingPage.storeVaksinasi');
-Route::get('/daftar-vaksinasi/{id}', [LandingPageControllrer::class , 'daftarVaksinasi'])->name('landingPage.daftarVaksinasi');
+Route::get('/daftar-vaksinasi', [LandingPageControllrer::class , 'daftarVaksinasi'])->name('landingPage.daftarVaksinasi');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [HomeController::class , 'index'])->name('dashboard.index');
     
@@ -61,6 +61,8 @@ Route::middleware(['auth'])->group(function () {
     // Jadwal vaksin
     Route::get('/jadwal-vaksin', [JadwalVaksinController::class , 'index'])->name('jadwal.index');
     Route::get('/buat/jadwal-vaksin', [JadwalVaksinController::class , 'createJadwal'])->name('jadwal.createJadwal');
+    Route::get('/detail-pendaftar/{id}', [JadwalVaksinController::class , 'detailPendaftar'])->name('jadwal.detailPendaftar');
+    
     Route::post('/jadwal-vaksin/store', [JadwalVaksinController::class , 'storeJadwal'])->name('jadwal.storeJadwal');
     Route::delete('/delete-jadwal/{id}', [JadwalVaksinController::class , 'deleteJadwal'])->name('jadwal.deleteJadwal');
 

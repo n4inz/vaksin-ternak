@@ -15,15 +15,15 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-2 py-3">
+                            <th scope="col" class="px-2 py-3 pl-5">
                                 Jadwal
                             </th>
-                            <!-- <th scope="col" class="px-6 py-3">
-                                Lokasi
-                            </th> -->
-                            <!-- <th scope="col" class="px-6 py-3">
-                                Vaksinator
-                            </th> -->
+                            <th scope="col" class="px-6 py-3">
+                                Kecamatan
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Desa
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Jumlah pendaftar
                             </th>
@@ -47,7 +47,7 @@
                     <tbody>
                         <tr v-for="item in jadwal" :key="item" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <div class="flex space-x-2 items-center justify-center">
+                                <div class="flex space-x-2 ">
                                     <svg @click="hapus(item.id)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-red-500 hover:cursor-pointer">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                                     </svg>
@@ -56,9 +56,12 @@
                                 
                                 </div>
                             </th>
-                            <!-- <td class="px-6 py-4">
-                                {{ item.lokasi }}
-                            </td> -->
+                            <td class="px-6 py-4">
+                                <span v-if="item.kecamatan !== null">{{ item.kecamatan.kecamatan }}</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span v-if="item.desa !== null">{{ item.desa.desa }}</span>
+                            </td>
                             <!-- <td class="px-6 py-4">
                                 {{ item.user ? item.user.name : '' }}
                             </td> -->
@@ -74,7 +77,7 @@
                             <!-- <td class="px-6 py-4">
                                 {{ item.jumlah_vaksin }}
                             </td> -->
-                            <td class="px-6 py-4">
+                            <td class="px-2 py-4 flex items-center space-x-2">
                                 <div class="sm:col-span-3">
                                     <div class="mt-2">
                                         <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
@@ -83,6 +86,13 @@
                                             <option :selected="item.status === 2" >Done</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div>
+                                    <Link :href="route('jadwal.detailPendaftar' , item.id)" class="bg-purple-700 rounded">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                        </svg>
+                                    </Link>
                                 </div>
                             </td>
                             <!-- <td class="px-6 py-4">
