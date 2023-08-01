@@ -30,7 +30,7 @@
                     <div class="sm:col-span-3">
                         <label for="nik" class="block text-sm font-medium leading-6 text-gray-900">Nik</label>
                         <div class="mt-2">
-                            <input type="number" id="nik" v-model="form.nik" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <input   type="number" id="nik" v-model="form.nik"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="16" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                         <div v-if="form.errors.nik" v-text="form.errors.nik" class="text-xs text-red-500 mt-2"></div>
                     </div>
@@ -161,10 +161,10 @@ export default {
         const daftarVaksin = () => {
             form.post('/store-vaksinasi')
         }
-
+        
         return {
             form,
-            daftarVaksin
+            daftarVaksin,
         }
     },
 

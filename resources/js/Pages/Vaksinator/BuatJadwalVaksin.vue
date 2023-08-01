@@ -65,11 +65,11 @@
                                 ></div>
                             </div>
 
-                            <div class="sm:col-span-4">
+                            <!-- <div class="sm:col-span-4">
                                 <label
                                     for="lokasi"
                                     class="block text-sm font-medium leading-6 text-gray-900"
-                                    >Lokasi vaksinani</label
+                                    >Lokasi vaksinasi</label
                                 >
                                 <div class="mt-2">
                                     <input
@@ -86,7 +86,92 @@
                                     v-text="form.errors.lokasi"
                                     class="text-xs text-red-500 mt-2"
                                 ></div>
+                            </div> -->
+                            <div class="sm:col-span-1">
+                                <label
+                                    for="kecamatan"
+                                    class="block text-sm font-medium leading-6 text-gray-900"
+                                    >Kecamatan</label
+                                >
+                                <div class="mt-2">
+                                    <select
+                                        id="kecamatan"
+                                        autocomplete="kecamatan"
+                                        v-model="form.kecamatan"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                    >
+                                        <option
+                                            v-for="item in kecamatan"
+                                            :key="item"
+                                            :value="item.id"
+                                        >
+                                            {{ item.kecamatan }}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div
+                                    v-if="form.errors.kecamatan"
+                                    v-text="form.errors.kecamatan"
+                                    class="text-xs text-red-500 mt-2"
+                                ></div>
                             </div>
+                            <div class="sm:col-span-1">
+                                <label
+                                    for="desa"
+                                    class="block text-sm font-medium leading-6 text-gray-900"
+                                    >Desa / Kelurahan</label
+                                >
+                                <div class="mt-2">
+                                    <select
+                                        id="desa"
+                                        autocomplete="desa"
+                                        v-model="form.desa"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                    >
+                                        <option
+                                            v-for="item in desa"
+                                            :key="item"
+                                            :value="item.id"
+                                        >
+                                            {{ item.desa }}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div
+                                    v-if="form.errors.desa"
+                                    v-text="form.errors.desa"
+                                    class="text-xs text-red-500 mt-2"
+                                ></div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label
+                                    for="alamat"
+                                    class="block text-sm font-medium leading-6 text-gray-900"
+                                    >Alamat</label
+                                >
+                                <div class="mt-2">
+                                    <select
+                                        id="alamat"
+                                        autocomplete="alamat"
+                                        v-model="form.alamat"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                    >
+                                        <option
+                                            v-for="item in alamat"
+                                            :key="item"
+                                            :value="item.id"
+                                        >
+                                            {{ item.alamat }}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div
+                                    v-if="form.errors.alamat"
+                                    v-text="form.errors.alamat"
+                                    class="text-xs text-red-500 mt-2"
+                                ></div>
+                            </div>
+
                             <div class="sm:col-span-2">
                                 <label
                                     for="nama_vaksin"
@@ -174,6 +259,15 @@ export default {
         dataVaksin: {
             type: Array,
         },
+        kecamatan: {
+            type: Array,
+        },
+        desa: {
+            type: Array,
+        },
+        alamat: {
+            type: Array,
+        },
     },
 
     setup() {
@@ -181,6 +275,9 @@ export default {
             jadwal: "",
             waktu: "",
             lokasi: "",
+            kecamatan: "",
+            desa: "",
+            alamat:"",
             nama_vaksin: "",
             keterangan:""
         });

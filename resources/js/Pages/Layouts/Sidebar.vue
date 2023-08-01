@@ -76,6 +76,17 @@
                 </li>
 
                 <li  v-if="$page.props.auth.admin == true">
+                    <Link :href="route('index.lokasi')" class="flex items-center p-2 text-white rounded-lg ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+
+                        <span class="flex-1 ml-3 whitespace-nowrap">Data lokasi</span>
+                    </Link>
+                </li>
+
+                <li  v-if="$page.props.auth.admin == true">
                    <Link :href="route('vaksinator')" class="flex items-center p-2 text-white rounded-lg ">
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-white transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                         <span class="flex-1 ml-3 whitespace-nowrap">Users</span>

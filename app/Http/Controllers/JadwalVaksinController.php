@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alamat;
 use App\Models\DataVaksin;
+use App\Models\Desa;
 use App\Models\JadwalVaksin;
+use App\Models\Kecamatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -26,9 +29,15 @@ class JadwalVaksinController extends Controller
 
     public function createJadwal()
     {
+        $kecamatan = Kecamatan::orderBy('id', 'desc')->get();
+        $desa = Desa::orderBy('id', 'desc')->get();
+        $alamat = Alamat::orderBy('id', 'desc')->get();
         $dataVaksin = DataVaksin::query()->get();
         return Inertia::render('Vaksinator/BuatJadwalVaksin',[
-            'dataVaksin' => $dataVaksin
+            'dataVaksin' => $dataVaksin,
+            'kecamatan' => $kecamatan,
+            'desa' => $desa,
+            'alamat' => $alamat,
         ]);
     }
 

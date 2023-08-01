@@ -5,6 +5,7 @@ use App\Http\Controllers\DataVaksinController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalVaksinController;
 use App\Http\Controllers\LandingPageControllrer;
+use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\VaksinatorController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,4 +68,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/jadwal-saya', [JadwalVaksinController::class , 'jadwalSaya'])->name('jadwal.jadwalSaya');
     Route::post('/add-jumlah-vaksin', [JadwalVaksinController::class , 'addJumlahVaksin'])->name('jadwal.addJumlahVaksin');
 
+
+    // Lokasi
+    Route::get('/lokasi', [LokasiController::class , 'index'])->name('index.lokasi');
+    Route::get('/add-lokasi', [LokasiController::class , 'addLokasi'])->name('lokasi.addLokasi');
+
+    Route::post('/save-lokasi', [LokasiController::class , 'saveLokasi'])->name('lokasi.saveLokasi');
+    Route::post('/delete-lokasi', [LokasiController::class , 'delete'])->name('lokasi.delete');
+
+    
 });
