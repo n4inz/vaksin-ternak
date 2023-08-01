@@ -5,6 +5,7 @@ use App\Http\Controllers\DataVaksinController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalVaksinController;
 use App\Http\Controllers\LandingPageControllrer;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\VaksinatorController;
 use Illuminate\Support\Facades\Route;
@@ -78,5 +79,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/save-lokasi', [LokasiController::class , 'saveLokasi'])->name('lokasi.saveLokasi');
     Route::post('/delete-lokasi', [LokasiController::class , 'delete'])->name('lokasi.delete');
 
+
+    // Laporan
+    Route::get('/laporan', [LaporanController::class , 'index'])->name('index.laporan');
     
 });
