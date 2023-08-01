@@ -43,18 +43,21 @@ class JadwalVaksinController extends Controller
 
     public function storeJadwal(Request $request)
     {
-        // return $request;
+        // return $request->all();
         $request->validate([
             'jadwal' => 'required',
             'waktu' => 'required',
-            'lokasi' => 'required',
+            // 'lokasi' => 'required',
             'nama_vaksin' => 'required'
         ]);
         JadwalVaksin::create([
             'jadwal' => $request->jadwal. ' '.$request->waktu,
-            'lokasi' => $request->lokasi,
+            'lokasi' => $request->lokasi ?? 'change location',
             'data_vaksins_id' => $request->nama_vaksin,
-            'keterangan' => $request->keterangan
+            'keterangan' => $request->keterangan,
+            'kecamatans_id' => $request->kecamatan,
+            'desas_id' => $request->desa,
+            'alamats_id' => $request->alamat
         ]);
 
         return Redirect::route('jadwal.index')->with('success', 'Create jadwal suksess');

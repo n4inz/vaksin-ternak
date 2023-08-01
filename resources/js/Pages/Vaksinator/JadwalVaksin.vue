@@ -18,12 +18,12 @@
                             <th scope="col" class="px-2 py-3">
                                 Jadwal
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <!-- <th scope="col" class="px-6 py-3">
                                 Lokasi
-                            </th>
-                            <th scope="col" class="px-6 py-3">
+                            </th> -->
+                            <!-- <th scope="col" class="px-6 py-3">
                                 Vaksinator
-                            </th>
+                            </th> -->
                             <th scope="col" class="px-6 py-3">
                                 Jumlah pendaftar
                             </th>
@@ -56,12 +56,12 @@
                                 
                                 </div>
                             </th>
-                            <td class="px-6 py-4">
+                            <!-- <td class="px-6 py-4">
                                 {{ item.lokasi }}
-                            </td>
-                            <td class="px-6 py-4">
+                            </td> -->
+                            <!-- <td class="px-6 py-4">
                                 {{ item.user ? item.user.name : '' }}
-                            </td>
+                            </td> -->
                             <td class="px-6 py-4">
                                {{ item.pendaftaran_vaksin_count }}
                             </td>
