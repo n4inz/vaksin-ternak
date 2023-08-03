@@ -58,14 +58,8 @@
                                 {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}
                             </td>
                             <td class="px-2 py-4 flex items-center space-x-2">
-                                <div class="sm:col-span-3">
-                                    <div class="mt-2">
-                                        <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                            <option :selected="item.status === 0"  >New</option>
-                                            <option :selected="item.status === 1" >Progress</option>
-                                            <option :selected="item.status === 2" >Done</option>
-                                        </select>
-                                    </div>
+                                <div class="sm:col-span-3 text-green-500">
+                                   Selesai
                                 </div>
                             </td>
                         </tr>
@@ -80,9 +74,9 @@
 
 import Sidebar from '../Layouts/Sidebar.vue';
 import { Link } from '@inertiajs/vue3';
-import { router, useForm } from '@inertiajs/vue3'
-import { ref ,reactive} from 'vue';
-// import { Inertia } from '@inertiajs/inertia';
+import { router } from '@inertiajs/vue3'
+import { ref} from 'vue';
+
 import dayjs from 'dayjs';
 
 export default {
@@ -102,21 +96,22 @@ export default {
     setup(){
         const myInput = ref([]);
         const selectedOption = ref('Minggu'); 
-       const formatDate = (date) => {
+        const formatDate = (date) => {
         return dayjs(date).format('YYYY/DD/MM');
 
-       }
+        }
 
        const export_pdf = () => {
-            alert(selectedOption.value);
-    }
+            window.location.href = '/export-pdf?data='+selectedOption.value;
+
+        }
 
 
 
         return {
             myInput,
             formatDate,
-selectedOption,
+            selectedOption,
             export_pdf
         }
     },

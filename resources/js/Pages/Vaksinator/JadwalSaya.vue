@@ -40,7 +40,7 @@
                                <span v-if="item.kecamatan !== null">{{ item.kecamatan.kecamatan }}</span>
                             </td>
                             <td class="px-6 py-4">
-                               <span v-if="item.desa !== null">{{ item.kecamatan.desa }}</span>
+                               <span v-if="item.desa !== null">{{ item.desa.desa }}</span>
                             </td>
                             <td class="px-6 py-4">
                                 {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}

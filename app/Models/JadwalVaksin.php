@@ -12,7 +12,8 @@ class JadwalVaksin extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-
+    const PROG = 1;
+    const DONE = 2;
     public function nama_vaksin()
     {
         return $this->belongsTo(DataVaksin::class, 'data_vaksins_id');
