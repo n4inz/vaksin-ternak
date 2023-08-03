@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\JadwalVaksin;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use PDF;
+
 class LaporanController extends Controller
 {
     public function index()
@@ -18,5 +20,12 @@ class LaporanController extends Controller
         return Inertia::render('Vaksinator/Laporan', [
             'laporan' => $laporan
         ]);
+    }
+
+    public function export()
+    {
+
+        $pdf = PDF::loadview('pdf/export',['pegawai'=> []]);
+        return $pdf->download('laporan-pdf.pdf');
     }
 }

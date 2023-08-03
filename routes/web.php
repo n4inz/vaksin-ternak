@@ -82,5 +82,6 @@ Route::middleware(['auth'])->group(function () {
 
     // Laporan
     Route::get('/laporan', [LaporanController::class , 'index'])->name('index.laporan');
+    Route::get('/export-pdf', [LaporanController::class , 'export'])->name('laporan.export');
     
 });
