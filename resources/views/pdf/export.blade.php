@@ -13,7 +13,7 @@
 	</style>
 	<center>
 		<h5>Laporan Vaksinasi Hewan Ternak Kab. Sidrap</h4>
-		<h6><a target="_blank" href="http://vaksin-ternak.navbar.my.id/">www.vaksin-ternak.navbar.my.id/</a></h5>
+		<h6><a target="_blank" href="http://vaksin-ternak.navbar.my.id">www.vaksin-ternak.navbar.my.id/</a></h5>
 	</center>
  
 	<table class='table table-bordered'>
