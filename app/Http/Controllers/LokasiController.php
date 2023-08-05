@@ -14,7 +14,11 @@ class LokasiController extends Controller
 {
     public function index()
     {
-        $kecamatans = Kecamatan::select('id', 'kecamatan')->orderBy('id', 'desc')->get()->toArray();
+        $kecamatans = Kecamatan::select('id', 'kecamatan')->with(['desa' => function($desa){
+            $desa->with('alamat');
+        }])->orderBy('id', 'desc')->get()->toArray();
+
+        return $kecamatans;
         $desas = Desa::select('id', 'desa')->orderBy('id', 'desc')->get()->toArray();
         $alamats = Alamat::select('id', 'alamat')->orderBy('id', 'desc')->get()->toArray();
         
@@ -51,21 +55,29 @@ class LokasiController extends Controller
             'desa' => 'required',
             'alamat' => 'required'
         ]);
+        
+        $kec = Kecamatan::where('kecamatan', $request->kecamatan)->first('id');
+        if(!$kec){
+            $kec = Kecamatan::create([
+                'kecamatan' => $request->kecamatan
+            ]);
+        } 
 
-        Kecamatan::create([
-            'kecamatan' => $request->kecamatan
-        ]);
+        $des = Desa::where('desa', $request->desa)->first('id');
 
-        Desa::create([
-            'desa' => $request->desa
-        ]);
+        if(!$des){
+            $des = Desa::create([
+                'desa' => $request->desa,
+                'kecamatans_id' => $kec->id,
+            ]);
+        }
 
 
         Alamat::create([
-            'alamat' => $request->alamat
+            'alamat' => $request->alamat,
+            'kecamatans_id' => $kec->id,
+            'desas_id' => $des->id
         ]);
-
-        
 
         return Redirect::route('index.lokasi')->with('success', 'Create lokasi suksess');
     }
@@ -73,13 +85,14 @@ class LokasiController extends Controller
     public function delete(Request $request)
     {
         
-        Kecamatan::where('id' , $request->kec)->delete();
-
+        Alamat::where('id' , $request->al)->delete();
         Desa::where('id' , $request->des)->delete();
 
+        Kecamatan::where('id' , $request->kec)->delete();
 
-        Alamat::where('id' , $request->al)->delete();
 
+
+       
         return Redirect::route('index.lokasi')->with('success', 'Delete lokasi suksess');
     }
 }

@@ -58,7 +58,7 @@
                                 :key="item"
                                 :value="item.id"
                             >
-                                {{ item.jadwal }}
+                                {{ formatDate( item.jadwal) }}
                             </option>
                         </select>
                         <div v-if="form.errors.jadwal_form" v-text="form.errors.jadwal_form" class="text-xs text-red-500 mt-2"></div>
@@ -195,7 +195,8 @@
 
 import Sidebar from '../Layouts/Sidebar.vue';
 import { Link , useForm } from '@inertiajs/vue3';
-
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 export default {
     components: {
         Sidebar,
@@ -243,10 +244,16 @@ export default {
         const daftarVaksin = () => {
             form.post('/store-vaksinasi')
         }
+
+        const formatDate = (date) => {
+             dayjs.locale('id');
+             return dayjs(date).format('dddd DD/MM/YYYY');
+        }
         
         return {
             form,
             daftarVaksin,
+            formatDate
         }
     },
 
