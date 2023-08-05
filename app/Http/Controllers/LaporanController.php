@@ -41,6 +41,7 @@ class LaporanController extends Controller
         ->withCount('pendaftaran_vaksin')
         ->withSum('pendaftaran_vaksin', 'jumlah_hewan')
         ->with(['user', 'kecamatan', 'desa', 'alamat'])
+        ->where('status' , JadwalVaksin::DONE)
         ->whereDate('updated_at', '>=', $time)
         ->orderBy('id', 'desc')
         ->get();
