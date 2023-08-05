@@ -18,7 +18,7 @@ class LokasiController extends Controller
             $desa->with('alamat');
         }])->orderBy('id', 'desc')->get()->toArray();
 
-        return $kecamatans;
+        // return $kecamatans;
         $desas = Desa::select('id', 'desa')->orderBy('id', 'desc')->get()->toArray();
         $alamats = Alamat::select('id', 'alamat')->orderBy('id', 'desc')->get()->toArray();
         
@@ -38,7 +38,7 @@ class LokasiController extends Controller
         
         // return $combinedData;
         return Inertia::render('Vaksinator/Lokasi', [
-            'combined' => $combinedData,
+            'combined' => $kecamatans,
             
         ]);
     }

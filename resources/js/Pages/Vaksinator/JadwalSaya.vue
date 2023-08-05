@@ -19,9 +19,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Jumlah sapi
                             </th>
-                            <!-- <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3">
                                 Nama vaksin
-                            </th> -->
+                            </th>
                             <!-- <th scope="col" class="px-6 py-3">
                                 Jumlah vaksin
                             </th> -->
@@ -45,7 +45,10 @@
                             <td class="px-6 py-4">
                                 {{ item.pendaftaran_vaksin_sum_jumlah_hewan }}
                             </td>
-
+                            <td>
+                                {{ item.nama_vaksin.nama_vaksin }}
+                                
+                            </td>
                             <td class="px-6 py-4 flex items-center space-x-2">
                                 <div class="sm:col-span-3 w-full">
                                     <div class="mt-2">

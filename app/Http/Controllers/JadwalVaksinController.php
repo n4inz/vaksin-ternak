@@ -80,7 +80,7 @@ class JadwalVaksinController extends Controller
         ->whereHas('nama_vaksin')
         ->withSum('pendaftaran_vaksin', 'jumlah_hewan')
         ->orderBy('id', 'desc')->get();
-        
+        // return $jadwal;
         return Inertia::render('Vaksinator/JadwalSaya',[
             'jadwal' => $jadwal
         ]);

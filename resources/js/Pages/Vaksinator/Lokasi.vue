@@ -35,10 +35,15 @@
                                 <span>{{ item.kecamatan }}</span>
                             </th>
                             <td class="px-6 py-4">
-                                {{ item.desa }}
+                                <div v-for="desa in item.desa" :key="desa">{{desa.desa}}</div>
+                               
+                                <!-- {{ item.desa }} -->
                             </td>
                             <td class="px-6 py-4">
-                                {{ item.alamat }}
+                                 <div v-for="desa in item.desa" :key="desa">
+                                    <div v-for="alamat in desa.alamat" :key="alamat">{{alamat.alamat}}</div>
+
+                                 </div>
                             </td>
                             <td>
                                 <svg  @click="hapus(item.kecamatan_id ,item.desa_id , item.alamat_id)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500 hover:cursor-pointer">
