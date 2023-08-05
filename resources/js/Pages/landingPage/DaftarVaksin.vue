@@ -27,7 +27,7 @@
 
              
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-3">
+                    <div class="sm:col-span-2">
                         <label for="nik" class="block text-sm font-medium leading-6 text-gray-900">Nik</label>
                         <div class="mt-2">
                             <input   type="number" id="nik" v-model="form.nik"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="16" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -35,12 +35,20 @@
                         <div v-if="form.errors.nik" v-text="form.errors.nik" class="text-xs text-red-500 mt-2"></div>
                     </div>
 
-                    <div class="sm:col-span-3">
+                    <div class="sm:col-span-2">
                         <label for="nama_pemilik" class="block text-sm font-medium leading-6 text-gray-900">Nama Pemilik Hewan</label>
                         <div class="mt-2">
                             <input type="text" v-model="form.nama_pemilik" id="nama_pemilik" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                         <div v-if="form.errors.nama_pemilik" v-text="form.errors.nama_pemilik" class="text-xs text-red-500 mt-2"></div>
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label for="no_hp" class="block text-sm font-medium leading-6 text-gray-900">Nomor Handphone</label>
+                        <div class="mt-2">
+                            <input type="number" v-model="form.no_hp" id="no_hp" autocomplete="no_hp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="12" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        <div v-if="form.errors.no_hp" v-text="form.errors.no_hp" class="text-xs text-red-500 mt-2"></div>
                     </div>
 
 
@@ -137,6 +145,7 @@
                         <select v-model="form.umur_bulan" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" name="" id="">
                             <option value="Bulan">Bulan</option>
                             <option value="Minggu">Minggu</option>
+                             <option value="Tahun">Tahun</option>
                         </select>
 
                         </div>
@@ -237,7 +246,7 @@ export default {
             kecamatan:"",
             desa:"",
             alamat:"",
-
+            no_hp: ""
         });
 
 

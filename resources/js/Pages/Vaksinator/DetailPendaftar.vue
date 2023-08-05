@@ -22,6 +22,9 @@
                                 Nik
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Nomor HP
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Nama Pemilik
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -37,6 +40,10 @@
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ item.nik }}
                             </th>
+                            <td class="px-6 py-4">
+                                <span v-if="item.no_hp">{{ item.no_hp }}</span>
+                              
+                            </td>
                             <td class="px-6 py-4">
                                {{ item.nama_pemilik }}
                             </td>

@@ -56,7 +56,8 @@ class LandingPageControllrer extends Controller
             'kecamatan' => 'required',
             'desa' => 'required',
             'alamat' => 'required',
-            'jadwal_form' => 'required'
+            'jadwal_form' => 'required',
+            'no_hp' => 'required'
         ]);
 
         PendaftaranVaksin::create([
@@ -65,7 +66,8 @@ class LandingPageControllrer extends Controller
             'jumlah_hewan' => $request->jumlah_hewan,
             'jadwal_vaksin_id' => $request->jadwal_form,
             'umur_jumlah' => $request->umur_jumlah,
-            'umur_bulan' => $request->umur_bulan
+            'umur_bulan' => $request->umur_bulan,
+            'no_hp' => '+62'.$request->no_hp
         ]);
 
         return Redirect::route('landingPage.daftarVaksinasi' , ['id' => $request->jadwal_vaksin_id])->with('message', 'Pendaftaran berhasil');
