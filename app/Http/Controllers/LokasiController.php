@@ -84,15 +84,9 @@ class LokasiController extends Controller
 
     public function delete(Request $request)
     {
-        
-        Alamat::where('id' , $request->al)->delete();
-        Desa::where('id' , $request->des)->delete();
-
         Kecamatan::where('id' , $request->kec)->delete();
-
-
-
-       
+        Alamat::where('kecamatans_id' , $request->kec)->delete();
+        Desa::where('kecamatans_id' , $request->kec)->delete();
         return Redirect::route('index.lokasi')->with('success', 'Delete lokasi suksess');
     }
 }
