@@ -28,6 +28,15 @@
                                 Nama Pemilik
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Kecamatan
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Desa
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Alamat
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Jumlah sapi
                             </th>
                             <th scope="col" class="px-6 w-40 py-3">
@@ -46,6 +55,15 @@
                             </td>
                             <td class="px-6 py-4">
                                {{ item.nama_pemilik }}
+                            </td>
+                            <td class="px-6 py-4">
+                               {{ item.desa }}
+                            </td>
+                            <td class="px-6 py-4">
+                               {{ item.kecamatan }}
+                            </td>
+                            <td class="px-6 py-4">
+                               {{ item.alamat }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ item.jumlah_hewan }}

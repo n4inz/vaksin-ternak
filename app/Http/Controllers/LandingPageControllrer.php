@@ -47,7 +47,10 @@ class LandingPageControllrer extends Controller
 
     public function storeVaksinasi(Request $request)
     {
-        
+       
+        $kec = Kecamatan::where('id', $request->kecamatan)->first('kecamatan');
+        $des = Desa::where('id', $request->desa)->first('desa');
+        $alamat = Alamat::where('id', $request->alamat)->first('alamat');
         $request->validate([
             'nik' => 'required|integer',
             'jumlah_hewan' => 'required|integer',
@@ -67,6 +70,9 @@ class LandingPageControllrer extends Controller
             'jadwal_vaksin_id' => $request->jadwal_form,
             'umur_jumlah' => $request->umur_jumlah,
             'umur_bulan' => $request->umur_bulan,
+            'kecamatan' => $kec ? $kec->kecamatan : $request->kecamatan,
+            'desa' => $des ? $des->desa :  $request->desa,
+            'alamat' => $alamat ? $alamat->alamat :  $request->alamat,
             'no_hp' => '+62'.$request->no_hp
         ]);
 
