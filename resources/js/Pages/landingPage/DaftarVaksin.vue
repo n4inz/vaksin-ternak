@@ -54,10 +54,10 @@
 
 
                     <div class="sm:col-span-2">
-                        <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Jadwal Vaksin</label>
+                        <label for="alamat" class="block text-sm font-medium leading-6 text-gray-900">Jadwal Vaksin</label>
                         <select
-                            id="desa"
-                            autocomplete="desa"
+                            id="alamat"
+                            autocomplete="alamat"
                             v-model="form.jadwal_form"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                         >
@@ -277,16 +277,45 @@ export default {
     form: {
       handler(newFormValue, oldFormValue) {
         console.log("Data form saat ini:", newFormValue.kecamatan);
+        // if(newFormValue.kecamatan == 'Tambah Kecamatan'){
+        //     alert('kec')
+        //     this.$refs.kecSelect.classList.toggle('hidden');
+        //     this.$refs.kecInput.classList.toggle('hidden');
+        // }else if(newFormValue.desa == 'Tambah Desa'){
+        //     alert('desa')
+        //     this.$refs.desSelect.classList.toggle('hidden');
+        //     this.$refs.desInput.classList.toggle('hidden');
+        // }else if(newFormValue.alamat == 'Tambah Alamat'){
+        //     alert('alamat')
+        //     this.$refs.alamatSelect.classList.toggle('hidden');
+        //     this.$refs.alamatInput.classList.toggle('hidden');
+        // }
+
         if(newFormValue.kecamatan == ' '){
-            this.$refs.kecSelect.classList.toggle('hidden');
-            this.$refs.kecInput.classList.toggle('hidden');
-        }else if(newFormValue.desa == ' '){
-            this.$refs.desSelect.classList.toggle('hidden');
-            this.$refs.desInput.classList.toggle('hidden');
-        }else if(newFormValue.alamat == ' '){
-            this.$refs.alamatSelect.classList.toggle('hidden');
-            this.$refs.alamatInput.classList.toggle('hidden');
+           
+            this.$refs.kecSelect.classList.add('hidden');
+            this.$refs.kecInput.classList.remove('hidden');
+        }else{
+            this.$refs.kecSelect.classList.remove('hidden');
+            this.$refs.kecInput.classList.add('hidden');
         }
+        
+        if(newFormValue.desa == ' '){
+            this.$refs.desSelect.classList.add('hidden');
+            this.$refs.desInput.classList.remove('hidden');
+        }else{
+            this.$refs.desSelect.classList.remove('hidden');
+            this.$refs.desInput.classList.add('hidden');
+        }
+        
+        if(newFormValue.alamat == ' '){
+            this.$refs.alamatSelect.classList.add('hidden');
+            this.$refs.alamatInput.classList.remove('hidden');
+        }else{
+             this.$refs.alamatSelect.classList.remove('hidden');
+            this.$refs.alamatInput.classList.add('hidden');
+        }
+
       },
       deep: true // Gunakan deep: true untuk memantau perubahan secara rekursif pada properti dalam objek form
     }
