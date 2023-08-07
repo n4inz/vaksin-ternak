@@ -52,26 +52,6 @@
                     </div>
 
 
-
-                    <div class="sm:col-span-2">
-                        <label for="alamat" class="block text-sm font-medium leading-6 text-gray-900">Jadwal Vaksin</label>
-                        <select
-                            id="alamat"
-                            autocomplete="alamat"
-                            v-model="form.jadwal_form"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                        >
-                            <option
-                                v-for="item in jadwal"
-                                :key="item"
-                                :value="item.id"
-                            >
-                                {{ formatDate( item.jadwal) }}
-                            </option>
-                        </select>
-                        <div v-if="form.errors.jadwal_form" v-text="form.errors.jadwal_form" class="text-xs text-red-500 mt-2"></div>
-                    </div>
-
                     <div class="sm:col-span-1">
                         <label for="kecamatan" class="block text-sm font-medium leading-6 text-gray-900">Kecamatan</label>
                         <select
@@ -81,13 +61,13 @@
                             ref="kecSelect"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                         >
-                            <option value=" ">Tambah Kecamatan</option>
+                            <!-- <option value=" ">Tambah Kecamatan</option> -->
                             <option
-                                v-for="item in kecamatan"
+                                v-for="item in jadwal"
                                 :key="item"
                                 :value="item.id"
                             >
-                                {{ item.kecamatan }}
+                                {{ item.kecamatan.kecamatan }}
                             </option>
                         </select>
                         <input ref="kecInput" type="text" v-model="form.kecamatan" id="kecamatan" autocomplete="family-name" class="hidden block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -97,6 +77,7 @@
 
                     <div class="sm:col-span-1">
                         <label for="desa" class="block text-sm font-medium leading-6 text-gray-900">Desa</label>
+                        <!--
                         <select
                             id="desa"
                             autocomplete="desa"
@@ -104,7 +85,7 @@
                             ref="desSelect"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                         >
-                            <option value=" ">Tambah Desa</option>
+                            <option value=" ">Tambah Desa</option> 
                             <option
                                 v-for="item in desa"
                                 :key="item"
@@ -113,13 +94,15 @@
                                 {{ item.desa }}
                             </option>
                         </select>
+                        -->
+                        <input  ref="desSelect" type="text" disabled v-model="form.desa" id="desa" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         <input ref="desInput" type="text" v-model="form.desa" id="desa" autocomplete="family-name" class="hidden block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         <div v-if="form.errors.desa" v-text="form.errors.desa" class="text-xs text-red-500 mt-2"></div>
                     </div>
 
                     <div class="sm:col-span-2">
                         <label for="alamat" class="block text-sm font-medium leading-6 text-gray-900">Alamat</label>
-                        <select
+                        <!-- <select
                             id="alamat"
                             autocomplete="alamat"
                             v-model="form.alamat"
@@ -134,9 +117,30 @@
                             >
                                 {{ item.alamat }}
                             </option>
-                        </select>
+                        </select> -->
+                        <input  ref="alamatSelect" type="text" disabled v-model="form.alamat" id="desa" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         <input ref="alamatInput" type="text" v-model="form.alamat" id="alamat" autocomplete="family-name" class="hidden block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         <div v-if="form.errors.alamat" v-text="form.errors.alamat" class="text-xs text-red-500 mt-2"></div>
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label for="jadwal" class="block text-sm font-medium leading-6 text-gray-900">Jadwal Vaksin</label>
+                        <!-- <select
+                            id="alamat"
+                            autocomplete="alamat"
+                            v-model="form.jadwal_form"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                            <option
+                                v-for="item in jadwal"
+                                :key="item"
+                                :value="item.id"
+                            >
+                                {{ formatDate( item.jadwal) }}
+                            </option>
+                        </select> -->
+                        <input  type="text" disabled v-model="form.jadwal_form" id="jadwal" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <div v-if="form.errors.jadwal_form" v-text="form.errors.jadwal_form" class="text-xs text-red-500 mt-2"></div>
                     </div>
 
 
@@ -152,8 +156,8 @@
                         <label for="" class="block text-sm font-medium leading-6 text-gray-900 invisible">Umur</label>
                         <div class="mt-2">
                         <select v-model="form.umur_bulan" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" name="" id="">
-                            <option value="Bulan">Bulan</option>
                             <option value="Minggu">Minggu</option>
+                            <option value="Bulan">Bulan</option>
                              <option value="Tahun">Tahun</option>
                         </select>
 
@@ -167,12 +171,13 @@
                             <select
                                 id="nama_vaksin"
                                 autocomplete="nama_vaksin"
+                                v-model="form.nama_vaksin"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                             >
                                 <option
                                     v-for="item in namaVaksin"
                                     :key="item"
-                                    :value="item.id"
+                                    :value="item.nama_vaksin"
                                 >
                                     {{ item.nama_vaksin }}
                                 </option>
@@ -255,7 +260,8 @@ export default {
             kecamatan:"",
             desa:"",
             alamat:"",
-            no_hp: ""
+            no_hp: "",
+            nama_vaksin: ""
         });
         const daftarVaksin = () => {
             form.post('/store-vaksinasi')
@@ -276,7 +282,16 @@ export default {
       watch: {
     form: {
       handler(newFormValue, oldFormValue) {
-        console.log("Data form saat ini:", newFormValue.kecamatan);
+       
+        if(newFormValue.kecamatan){
+            var test =  this.jadwal.find(item => item.id === newFormValue.kecamatan)
+            console.log(test.desa.desa)
+            newFormValue.desa = test.desa.desa;
+             newFormValue.alamat = test.alamat.alamat;
+              newFormValue.jadwal_form = this.formatDate(test.jadwal);
+             
+        }
+    //    alert(newFormValue.kecamatan);
         // if(newFormValue.kecamatan == 'Tambah Kecamatan'){
         //     alert('kec')
         //     this.$refs.kecSelect.classList.toggle('hidden');

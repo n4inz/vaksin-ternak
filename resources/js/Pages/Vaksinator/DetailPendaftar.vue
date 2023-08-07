@@ -36,6 +36,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Alamat
                             </th>
+                              <th scope="col" class="px-6 py-3">
+                                Nama Vaksin
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Jumlah sapi
                             </th>
@@ -64,6 +67,9 @@
                             </td>
                             <td class="px-6 py-4">
                                {{ item.alamat }}
+                            </td>
+                            <td class="px-6 py-4">
+                               {{ item.nama_vaksin }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ item.jumlah_hewan }}
