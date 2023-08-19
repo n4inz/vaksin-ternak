@@ -19,12 +19,12 @@
                             <th scope="col" class="px-6 py-3">
                                 Jumlah Pendaftar
                             </th>
-                            <!-- <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3">
                                 Nama vaksin
-                            </th> -->
-                            <!-- <th scope="col" class="px-6 py-3">
-                                Jumlah vaksin
-                            </th> -->
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Stok Vaksin
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 status
                             </th>
@@ -45,10 +45,14 @@
                             <td class="px-6 py-4">
                                 {{ item.pendaftaran_vaksin_count }}
                             </td>
-                            <!-- <td>
+                            <td>
                                 {{ item.nama_vaksin.nama_vaksin }}
                                 
-                            </td> -->
+                            </td>
+                             <td class="px-6 py-4">
+                                {{ item.nama_vaksin.terpakai }}
+                                
+                            </td>
                             <td class="px-6 py-4 flex items-center space-x-2">
                                 <div class="sm:col-span-3 w-full">
                                     <div class="mt-2">

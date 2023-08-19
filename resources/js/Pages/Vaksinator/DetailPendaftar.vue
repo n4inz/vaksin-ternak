@@ -36,8 +36,11 @@
                             <th scope="col" class="px-6 py-3">
                                 Alamat
                             </th>
-                              <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3">
                                 Nama Vaksin
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                stok
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Jumlah sapi
